@@ -6,11 +6,11 @@
     <meta name="google-site-verification" content="LHdyygEHPpZF-SgmG_kHtpkBuUNU1cQMLvIc2zSNF9U" />
     <title>CAATMA - Centro de Articulação e Assessoria do Trabalho com Mulheres no Araripe</title>
     <style>
-        /* NOVA PALETA DE CORES BASEADA NA LOGOMARCA */
+        /* PALETA DE CORES BASEADA NA LOGOMARCA */
         :root {
-            --cor-primaria: #8B1257; /* Magenta/Roxo escuro da logo CAATMA */
-            --cor-secundaria: #C84B8E; /* Rosa médio/vivo das ondas da imagem */
-            --cor-fundo: #FCF4F8; /* Rosa bem clarinho para o fundo do site */
+            --cor-primaria: #8B1257; 
+            --cor-secundaria: #C84B8E; 
+            --cor-fundo: #FCF4F8; 
             --cor-texto: #333333;
             --cor-branco: #ffffff;
         }
@@ -31,18 +31,13 @@
         nav ul li a { text-decoration: none; color: var(--cor-primaria); font-weight: bold; font-size: 1rem; text-transform: uppercase; padding: 5px 10px; transition: 0.3s; }
         nav ul li a:hover { color: var(--cor-secundaria); border-bottom: 3px solid var(--cor-secundaria); }
         
-        /* NOVO ESTILO DO BANNER (Exibindo a Imagem) */
         .hero-banner { 
             width: 100%; 
             background-color: var(--cor-branco);
             border-bottom: 5px solid var(--cor-primaria);
             display: flex;
         }
-        .hero-banner img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
+        .hero-banner img { width: 100%; height: auto; display: block; }
         
         .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 0 20px; }
         .secao-titulo { font-size: 1.8rem; color: var(--cor-primaria); border-left: 5px solid var(--cor-secundaria); padding-left: 10px; margin-bottom: 20px; text-transform: uppercase; }
@@ -95,15 +90,16 @@
                     <li><a href="#">Inicial</a></li>
                     <li><a href="#">Institucional</a></li>
                     <li><a href="#">Notícias</a></li>
+                    <li><a href="#documentos">Documentos</a></li> <!-- NOVA ABA AQUI -->
                     <li><a href="#">Projetos</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Banner Central com a Nova Imagem -->
+    <!-- Banner Central com a Imagem -->
     <section class="hero-banner">
-        <img src="banner.jpg" alt="Banner CAATMA - Juntas somos mais fortes, Gênero, Cidadania, Autonomia, Respeito">
+        <img src="banner.jpg" alt="Banner CAATMA - Juntas somos mais fortes">
     </section>
 
     <!-- Estrutura de Notícias -->
@@ -135,6 +131,24 @@
                 <p style="font-size: 0.9rem;">Atuamos diretamente na defesa dos direitos e na promoção da agricultura familiar.</p>
             </div>
         </aside>
+    </div>
+
+    <!-- NOVA SEÇÃO: TRANSPARÊNCIA E DOCUMENTOS -->
+    <div class="container" id="documentos" style="margin-top: 0;">
+        <main style="grid-column: 1 / -1;"> <!-- Esta linha faz a seção ocupar a largura toda -->
+            <h2 class="secao-titulo">Transparência e Documentos</h2>
+            
+            <article class="noticia-item" style="padding: 20px; align-items: center; flex-direction: row; flex-wrap: wrap; gap: 20px;">
+                <div style="font-size: 3.5rem; color: var(--cor-secundaria);">📄</div>
+                <div style="flex: 1;">
+                    <h3 style="color: var(--cor-primaria); margin-bottom: 8px; font-size: 1.3rem;">Regulamento de Compras e Contratação de Serviços</h3>
+                    <p style="color: #555; margin-bottom: 15px; font-size: 0.95rem;">Documento que define as regras e etapas para a compra de materiais e contratação de serviços aplicadas ao Centro de Articulação e Assessoria do Trabalho com Mulheres no Araripe (CAATMA).</p>
+                    <a href="Regulamento de Compras (1).pdf" target="_blank" style="display: inline-block; background-color: var(--cor-primaria); color: white; padding: 10px 20px; text-decoration: none; border-radius: 4px; font-weight: bold; transition: 0.3s;">
+                        Baixar / Visualizar PDF
+                    </a>
+                </div>
+            </article>
+        </main>
     </div>
 
     <!-- Rodapé -->
