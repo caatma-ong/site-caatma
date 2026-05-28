@@ -6,31 +6,48 @@
     <meta name="google-site-verification" content="LHdyygEHPpZF-SgmG_kHtpkBuUNU1cQMLvIc2zSNF9U" />
     <title>CAATMA - Centro de Articulação e Assessoria do Trabalho com Mulheres no Araripe</title>
     <style>
+        /* NOVA PALETA DE CORES BASEADA NA LOGOMARCA */
         :root {
-            --cor-primaria: #00602b;
-            --cor-secundaria: #e07b00;
-            --cor-fundo: #f4f4f4;
+            --cor-primaria: #8B1257; /* Magenta/Roxo escuro da logo CAATMA */
+            --cor-secundaria: #C84B8E; /* Rosa médio/vivo das ondas da imagem */
+            --cor-fundo: #FCF4F8; /* Rosa bem clarinho para o fundo do site */
             --cor-texto: #333333;
             --cor-branco: #ffffff;
         }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
         body { background-color: var(--cor-fundo); color: var(--cor-texto); }
-        .top-bar { background-color: var(--cor-secundaria); color: var(--cor-branco); padding: 5px 20px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
-        .top-bar-links a { color: var(--cor-branco); text-decoration: none; margin-left: 15px; font-weight: bold; }
+        
+        .top-bar { background-color: var(--cor-secundaria); color: var(--cor-branco); padding: 8px 20px; font-size: 0.85rem; display: flex; justify-content: space-between; align-items: center; }
+        .top-bar-links a { color: var(--cor-branco); text-decoration: none; margin-left: 15px; font-weight: bold; transition: 0.3s; }
+        .top-bar-links a:hover { color: #f4f4f4; text-decoration: underline; }
+        
         header { background-color: var(--cor-branco); padding: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 1000; }
         .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-        .logo { font-size: 2rem; font-weight: 900; color: var(--cor-primaria); text-transform: uppercase; letter-spacing: 1px; }
+        .logo { font-size: 2.2rem; font-weight: 900; color: var(--cor-primaria); text-transform: uppercase; letter-spacing: 1px; }
         .logo span { display: block; font-size: 0.8rem; color: #666; font-weight: normal; letter-spacing: 0; }
+        
         nav ul { list-style: none; display: flex; gap: 20px; }
         nav ul li a { text-decoration: none; color: var(--cor-primaria); font-weight: bold; font-size: 1rem; text-transform: uppercase; padding: 5px 10px; transition: 0.3s; }
         nav ul li a:hover { color: var(--cor-secundaria); border-bottom: 3px solid var(--cor-secundaria); }
-        .hero-banner { background-color: #cccccc; height: 450px; display: flex; align-items: center; justify-content: center; color: #555; text-align: center; border-bottom: 5px solid var(--cor-primaria); }
-        .hero-texto { background-color: rgba(0, 96, 43, 0.85); color: white; padding: 30px; border-radius: 5px; max-width: 800px; }
-        .hero-texto h1 { font-size: 2rem; margin-bottom: 10px; }
-        .hero-texto p { font-size: 1.2rem; }
+        
+        /* NOVO ESTILO DO BANNER (Exibindo a Imagem) */
+        .hero-banner { 
+            width: 100%; 
+            background-color: var(--cor-branco);
+            border-bottom: 5px solid var(--cor-primaria);
+            display: flex;
+        }
+        .hero-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
         .container { max-width: 1200px; margin: 40px auto; display: grid; grid-template-columns: 2fr 1fr; gap: 40px; padding: 0 20px; }
         .secao-titulo { font-size: 1.8rem; color: var(--cor-primaria); border-left: 5px solid var(--cor-secundaria); padding-left: 10px; margin-bottom: 20px; text-transform: uppercase; }
-        .noticia-item { display: flex; background: var(--cor-branco); margin-bottom: 20px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: 0.3s; }
+        
+        .noticia-item { display: flex; background: var(--cor-branco); margin-bottom: 20px; border: 1px solid #ddd; box-shadow: 0 2px 4px rgba(0,0,0,0.05); transition: 0.3s; border-radius: 5px; overflow: hidden; }
         .noticia-item:hover { box-shadow: 0 5px 15px rgba(0,0,0,0.1); transform: translateY(-2px); }
         .noticia-data { background-color: var(--cor-primaria); color: white; padding: 15px; text-align: center; min-width: 100px; display: flex; flex-direction: column; justify-content: center; }
         .noticia-data .dia { font-size: 2rem; font-weight: bold; line-height: 1; }
@@ -38,14 +55,17 @@
         .noticia-conteudo { padding: 20px; }
         .noticia-conteudo h3 { color: var(--cor-primaria); margin-bottom: 10px; font-size: 1.2rem; }
         .noticia-conteudo p { font-size: 0.95rem; color: #555; }
-        .sidebar-banner { background-color: var(--cor-branco); padding: 20px; text-align: center; border: 1px solid #ddd; margin-bottom: 20px; }
-        footer { background-color: #1a1a1a; color: #cccccc; padding: 50px 20px 20px 20px; margin-top: 50px; }
+        
+        .sidebar-banner { background-color: var(--cor-branco); padding: 20px; text-align: center; border: 1px solid #ddd; margin-bottom: 20px; border-radius: 5px; }
+        
+        footer { background-color: #2b061b; color: #e6e6e6; padding: 50px 20px 20px 20px; margin-top: 50px; border-top: 5px solid var(--cor-secundaria); }
         .footer-container { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-bottom: 30px; }
         .footer-col h4 { color: var(--cor-branco); border-bottom: 2px solid var(--cor-secundaria); padding-bottom: 10px; margin-bottom: 20px; text-transform: uppercase; }
         .footer-col p, .footer-col li { margin-bottom: 10px; font-size: 0.95rem; list-style: none; }
-        .footer-col a { color: #cccccc; text-decoration: none; }
+        .footer-col a { color: #e6e6e6; text-decoration: none; transition: 0.3s; }
         .footer-col a:hover { color: var(--cor-secundaria); }
-        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #333; font-size: 0.85rem; }
+        .footer-bottom { text-align: center; padding-top: 20px; border-top: 1px solid #4a1533; font-size: 0.85rem; }
+        
         @media (max-width: 768px) {
             .header-container { flex-direction: column; text-align: center; }
             nav ul { margin-top: 15px; flex-wrap: wrap; justify-content: center; }
@@ -81,12 +101,9 @@
         </div>
     </header>
 
-    <!-- Banner Central -->
+    <!-- Banner Central com a Nova Imagem -->
     <section class="hero-banner">
-        <div class="hero-texto">
-            <h1>Fortalecendo mulheres, transformando comunidades</h1>
-            <p>Nossas ações no campo, agroecologia e agricultura familiar.</p>
-        </div>
+        <img src="banner.jpg" alt="Banner CAATMA - Juntas somos mais fortes, Gênero, Cidadania, Autonomia, Respeito">
     </section>
 
     <!-- Estrutura de Notícias -->
